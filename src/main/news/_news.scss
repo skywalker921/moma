@@ -1,0 +1,92 @@
+#news {
+    width: 100%; padding: 150px 0;
+
+    .inner{ 
+        width: 1180px; margin: 0 auto; position: relative;
+    
+        .plus {
+            position: absolute;right: 0;top: 30px;
+            >i {font-size:20px; color: #444;}
+        }
+        h1 { font: 500 34px/1 'Barlow', sans-serif; color: #333; text-align: left;margin-bottom: 20px; border-bottom: 1px solid #666; padding-bottom: 30px;}
+        .news-wrap {
+            overflow: hidden;
+        
+            &::after  {content:''; display: block; clear: both;}
+            ul {
+                width: 100%;
+                li {width: 380px;margin-right: 20px; background: #999; height: 300px; float: left;}
+                li:nth-child(3n) {margin-right: 0;}
+            }
+// 뉴스 호버 효과 필요
+        }
+        .news-control {
+            width: 100%; text-align: center;
+            ul { 
+                margin: 0 auto; display: inline-block;
+
+                &::after {content:''; display: block; clear: both;}
+                li {
+                    margin-right: 10px; float: left;
+                    a {display: block; width: 40px; height: 4px; background: #777;}
+
+                }
+                li:last-child {display: none;}
+            }      
+        }
+    }
+}
+
+
+/* tablet */
+@media screen and (max-width:$tablet){
+    #news{
+        width: 90%; padding: 100px 0; margin: 0 auto;
+        .inner{ 
+            width: 100%; 
+            
+            h1 {font-size: 28px;}
+            .news-wrap {
+                ul {
+                    li {width: 32%; box-sizing:border-box; margin-right: 2%;}
+                }
+            }
+
+            .news-control {
+                ul { 
+                    margin: 20px auto; 
+                    li {
+                        a {height: 5px;}
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* mobile */
+@media screen and (max-width:$mobile){
+    #news {
+        width: 90%; padding: 80px 0; 
+    
+        .inner{ 
+            width: 100%; 
+            h1 {font-size: 24px;}
+
+            .news-wrap {
+                ul {
+                    li {width: 49%; box-sizing:border-box; margin-right: 2%;}
+                    li:nth-child(2) {margin-right: 0;}
+                    li:nth-child(3) {display: none;}
+                }
+            }
+
+            .news-control {
+                ul {
+                    li:last-child {display: inline-block;}
+                }
+            }
+        }
+    }
+}

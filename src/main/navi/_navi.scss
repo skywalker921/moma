@@ -1,0 +1,28 @@
+#navi {
+    position: fixed; right: 30px; top: 50%; transform: translateY(-50%);z-index: 300;
+
+    li a {
+        display: block; 
+        width: 12px; height: 12px; background: #fff; margin-bottom: 10px;border: 1px solid #000; box-sizing: border-box;
+
+        &.on {
+            background: #000; height: 45px;
+        }
+    }
+}
+
+
+/* tablet */
+@media screen and (max-width:$tablet){
+    #navi {
+        right: 2%; 
+    }
+}
+
+
+/* mobile */
+@media screen and (max-width:$mobile){
+    #navi {
+        right: 1.2%; 
+    }
+}

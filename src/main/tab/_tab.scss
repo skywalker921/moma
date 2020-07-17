@@ -1,0 +1,152 @@
+#tab {
+    width: 100%; padding: 150px 0 200px 0; position: relative; 
+
+    &::before {content:''; display: block; width: 38%; height: 10%; background: #9fadb6; position: absolute; top: 15%; left: 0%; z-index: -2;}
+
+    .inner{
+        width: 1180px; margin: 0 auto;
+
+        h1 { font: 500 34px/1 'Barlow', sans-serif; color: #333; text-align: left;}
+        span {display: block; font: 16px/1 'Barlow', sans-serif; color: #eee; text-align: left; margin-top: 5px; margin-bottom: 50px;}
+
+        .wrap{
+            width: 100%; position: relative; height: 100%;
+
+            
+            >img.tab_logo {
+                position: absolute; width: 120px; z-index: 1; top: 7%; left: 10%; transform: translateX(-50%);
+            }
+
+            ul.tab_btns {
+                width: 20%; position: absolute; height: 100%; background: #f2efeb; top: 0; left: 0; box-sizing: border-box; padding-top: 150px;
+
+                li {
+                    width: 100%; height: 50px; box-sizing: border-box; 
+
+                    >a {
+                        width: 100%; height: 50px; display: block; font: bold 15px/50px 'Barlow', sans-serif; color: #777; text-indent: 50px;
+
+                        &.on {
+                            color: #084669;
+                        }
+                    }
+                }
+            }
+
+            >div {
+                width: 80%; height: 365px; box-sizing: border-box; margin-left: 20%; padding: 100px; position: relative; display: none; border: 1px solid #bbb;
+
+                h2 {
+                    font: 5vw/1 'Barlow', sans-serif; color: #aaa; transform:translateX(-200px); opacity:0; transition:0.5s; position:relative; z-index:2;
+                }
+
+                a{
+                    display: block; font: 13px/1 'Roboto', sans-serif; color: #777; margin-top: 30px; opacity: 0; transform: translateX(-180px); transition:0.5s 0.4s;  z-index: 1; 
+                }
+
+                >img{
+                    width: 40%; 
+                    position: absolute; right: 30px; bottom: 0; z-index: 1; transform:translateX(200px); opacity:0; transition:0.5s 0.2s;
+                }
+
+                &.on {
+                    display: block;
+
+                    a {transform: translateX(0px); opacity: 1;}
+                    h2 {transform:translateX(0px); opacity:1;}
+                    img {transform:translateX(0px); opacity:1;}
+                }
+            }
+        }
+    }
+}
+
+
+// tablet
+@media screen and (max-width:$tablet) {
+ 
+    #tab {
+    
+        &::before {content:''; display: block; width: 32%; height: 10%; background: #9fadb6; position: absolute; top:20%; left: 0%; z-index: -2;}
+    
+        .inner{
+            width: 90%; 
+    
+            h1 {font-size: 28px;}
+            span {font-size: 14px;}
+    
+            .wrap{
+                img.tab_logo { width: 100px; 
+                }
+    
+                ul.tab_btns { padding-top: 110px;
+    
+                    li {    
+                        >a { text-indent: 20px;
+    
+                        }
+                    }
+                }
+    
+                >div {padding: 70px; height: auto;
+    
+                    
+                }
+            }
+        }
+    }
+}
+
+//mobile
+
+@media screen and (max-width:$mobile) {
+   
+    #tab {
+        padding:80px 0;
+    
+        &::before {content:''; display: block; width: 38%; height: 10%; background: #9fadb6; position: absolute; top: 13%; left: 0%; z-index: -2;}
+    
+        .inner{
+    
+            h1 {  font-size: 24px;}
+           
+    
+            .wrap{
+                width: 100%; position: relative; height: 100%;
+
+                >img.tab_logo {
+                   display: none;
+                }
+    
+                ul.tab_btns {
+                    width: 100%; height: 40px; padding-top: 0px;  z-index: 3;
+    
+                    li {
+                        width: calc(100% / 3); height: 100%; float: left;
+    
+                        >a {
+                            width: 100%; height: 40px; display: block; font: bold 13px/40px 'Barlow', sans-serif; text-indent: 0px; text-align: center;
+    
+                        }
+                    }
+                }
+    
+                >div {
+                    width: 100%; margin-left: 0; padding: 120px 50px 50px 50px;
+    
+                    h2 {
+                        font-size: 40px;
+                    }
+    
+
+
+                    >img{
+                        width: auto; height: 80%;
+                    }
+    
+    
+                }
+            }
+        }
+    }
+}
