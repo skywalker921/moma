@@ -24,6 +24,8 @@
 
 /* ------tablet-------- */
 @media screen and (max-width:$tablet){  
+    $ht : 50px;
+    $gap : 20px;
         
     .department {
         .inner {
@@ -35,27 +37,55 @@
                     //1depth
                     li {
                         span {
-                            display: block; width: 35%; height: 50px; background: darkblue; font: bold 16px/50px '맑은고딕'; color: #fff; text-align: center; border-radius: 25px;
+                            display: block; width: 35%; height: $ht;
+                            background: darkblue; font-weight: bold; font-size :16px; line-height: $ht; font-family: '맑은고딕'; color: #fff; text-align: center; border-radius: $ht/2; margin-bottom: $gap; position: relative;
+
+                            &::after {
+                                content:''; display: block; width: 1px; background: #aaa; position: absolute; left: 30px; top: $ht; height: (($ht + $gap) * 3) - ($ht/2);
+                            }
                         }
                         //2depth
                         ul {
                             li {
                                 span {
-                                    background: royalblue; transform: translateX(40px); margin: 20px;
+                                    background: royalblue; transform: translateX(50px); 
+
+                                    &::before {
+                                        content: ''; display: block; width: 20px; height: 1px; background: #aaa; position: absolute; top: $ht/2; left: -20px;
+                                    }
                                 }
+
+                                &:nth-of-type(1) span::after {display: none;}
+                                &:nth-of-type(2) span::after {display: none;}
+                                &:nth-of-type(3) span::after {height: (($ht + $gap) * 12) - ($ht/2);}
+
                                 //3depth
                                 ul {
                                     li{
                                         span {
-                                            background: dodgerblue; transform: translateX(80px); margin: 20px;
+                                            background: dodgerblue; transform: translateX(100px); 
                                         }
+
+                                        &:nth-of-type(1) span::after {display: block; height: (($ht + $gap) * 2) - ($ht/2);}
+                                        &:nth-of-type(2) span::after {display: block; height: (($ht + $gap) * 3) - ($ht/2);}
+                                        &:nth-of-type(3) span::after {display: block; height: (($ht + $gap) * 3) - ($ht/2);}
+                                        &:nth-of-type(4) span::after {display: block; height: (($ht + $gap) * 4) - ($ht/2);}
+
                                         //4depth
                                         ul{
                                             li {
                                                 span {
                                                     background: lightskyblue;
-                                                    transform: translateX(120px); margin: 20px;
+                                                    transform: translateX(150px);
+
+                                                   
                                                 }
+
+                                                &:nth-of-type(1) span::after { display: none;}
+                                                &:nth-of-type(2) span::after { display: none;}
+                                                &:nth-of-type(3) span::after { display: none;}
+                                                &:nth-of-type(4) span::after { display: none;}
+
                                             }
                                         }                                    
                                     }
