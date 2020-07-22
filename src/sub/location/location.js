@@ -15,7 +15,7 @@ window.onload = function () {
         {
             title: '강남본점',
             latlng: new daum.maps.LatLng(37.4976637, 127.0258943),
-            imgSrc: './img/sub/pin.png',
+            imgSrc: './img/pin.png',
             imgSize: new daum.maps.Size(40, 40),
             imgPos: { offset: new kakao.maps.Point(0, 0) },
             button: document.getElementById('branch1')
@@ -23,7 +23,7 @@ window.onload = function () {
         {
             title: '종로점',
             latlng: new daum.maps.LatLng(37.5715, 126.9890588),
-            imgSrc: './img/sub/pin.png',
+            imgSrc: './img/pin.png',
             imgSize: new daum.maps.Size(40, 40),
             imgPos: { offset: new kakao.maps.Point(0, 0) },
             button: document.getElementById('branch2')
@@ -31,7 +31,7 @@ window.onload = function () {
         {
             title: '이태원점',
             latlng: new daum.maps.LatLng(37.5342356, 126.9935358),
-            imgSrc: './img/sub/pin.png',
+            imgSrc: './img/pin.png',
             imgSize: new daum.maps.Size(40, 40),
             imgPos: { offset: new kakao.maps.Point(-10, 30) },
             button: document.getElementById('branch3')
@@ -98,8 +98,15 @@ window.onload = function () {
         return false;
     }
 
+    $('#traffic>li').on('click', function(){
+        $('#traffic > li').removeClass('on');
+        $(this).addClass('on');
+    })
 
-
+    $('#branch>li').on('click', function(){
+        $('#branch>li').removeClass('on');
+        $(this).addClass('on');
+    })
 
 
 

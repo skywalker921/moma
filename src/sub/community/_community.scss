@@ -29,7 +29,7 @@
             tr {
                 &:hover {
                     td {
-                        background: lightblue;
+                        background: #85c9ee9d;;
                         a {text-decoration: underline; font-weight: bold;}
                     }
                 }
@@ -50,7 +50,7 @@
                 td:nth-of-type(2) {text-align: left;}
             }
 
-            tr:nth-of-type(even) {background: rgba(0,0,0,0.03);}        
+            tr:nth-of-type(even) {background: #f2efeb9c;}        
         }
 
         .pagenation {

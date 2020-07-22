@@ -30,11 +30,12 @@
                     content:''; display: block; clear: both;
                 }
                 >li {
-                    width:150px; height:40px; background:#fff; border: 1px solid #222; color:#444;
+                    width:150px; height:40px; background:#fff; border: 1px solid #333; color:#444;
                     font:500 12px/40px 'Noto Sans KR', sans-serif;  text-align:center;
                     float:left; margin-right:10px; cursor:pointer;
 
-                    &:hover {background: #222; color: #fff; font-size: 13px;}
+                    &:hover {background: #333; color: #fff; font-size: 13px;}
+                    &.on {background: #333; color: #fff; font-size: 13px;}
                 }
             }
 
@@ -45,11 +46,12 @@
                     content:''; display: block; clear: both;
                 }
                 >li {
-                    width:200px; height:40px; background:#fff; border: 1px solid #222; color:#444;
+                    width:200px; height:40px; background:#fff; border: 1px solid #333; color:#444;
                     font: 500 12px/40px 'Noto Sans KR', sans-serif; text-align:center;
                     float:left; margin-right:10px; cursor:pointer;
 
-                    &:hover {background: #222; color: #fff; font-size: 13px;}
+                    &:hover {background: #333; color: #fff; font-size: 13px;}
+                    &.on {background: #333; color: #fff; font-size: 13px;}
                 }
             }       
         }
