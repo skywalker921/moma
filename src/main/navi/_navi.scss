@@ -3,10 +3,10 @@
 
     li a {
         display: block; 
-        width: 12px; height: 12px; background: #fff; margin-bottom: 10px;border: 1px solid #000; box-sizing: border-box;
+        width: 12px; height: 12px; background: #fff; margin-bottom: 10px;border: 1px solid #222; box-sizing: border-box; transition: 0.3s;
 
         &.on {
-            background: #000; height: 45px;
+            background: #222; height: 45px;
         }
     }
 }
@@ -14,15 +14,6 @@
 
 /* tablet */
 @media screen and (max-width:$tablet){
-    #navi {
-        right: 2%; 
-    }
+    #navi {display: none;}
 }
 
-
-/* mobile */
-@media screen and (max-width:$mobile){
-    #navi {
-        right: 1.2%; 
-    }
-}

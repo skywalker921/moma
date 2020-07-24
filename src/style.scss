@@ -7,6 +7,8 @@ $mobile : 639px;
 ul,ol,li {list-style:none;}
 a {text-decoration:none; color:#555;}
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Roboto&display=swap');
+
 //main
 @import "main/header/header";
 @import "main/visual/visual";
@@ -33,11 +35,30 @@ a {text-decoration:none; color:#555;}
 @import "sub/gallery_video/gallery_video";
 @import "sub/signup/signup";
 @import "sub/login/login";
+@import "sub/donation/donation";
+
+// main page common transition
+.main {
+    &.on {
+        .inner {
+            h1 {transform: translateX(0); opacity: 1;}
+            .wrap {opacity: 1;}
+        }
+    }
+    .inner {
+        
+        h1 {
+            transform: translateX(-200px); opacity: 0; transition: 0.5s;
+        }
+
+        .wrap {
+            opacity:0; transition: 0.5s;
+        }
+    }
+}
 
 
 //sub common layout
-
-
 
 /* content */
 .content {
@@ -47,8 +68,14 @@ a {text-decoration:none; color:#555;}
         width: 1180px; margin: 0 auto; padding: 150px 0; box-sizing: border-box; transition: 0.5s; min-height: 500px; position: relative;
     
         h1 {
-            font: 30px/1 'Roboto', sans-serif; color: #777; letter-spacing: 1px;
-            &::after {content:''; display: block; width: 60px; height: 2px; background: #888; margin-top: 14px; margin-bottom: 40px; margin-left: 5px;}
+            font: 30px/1 'Barlow', sans-serif; color: #555; letter-spacing: 1px; display: inline-block; margin-bottom: 50px;
+
+            &::before {
+                content:''; display: inline-block; width: 3px; height: 23px; background: #2d4553; margin-right: 10px;
+            }
+
+            // &::after {content:''; display: block; width: 60px; height: 2px; background: #888; margin-top: 14px; margin-bottom: 40px; margin-left: 5px;}
+
             span {
                 font: 14px/1 '맑은고딕'; color: #888;letter-spacing: 1px; margin-left: 10px;
                 &::before {color: #888; content:'/'; margin-right: 15px;}

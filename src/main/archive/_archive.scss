@@ -1,7 +1,13 @@
 #archive {
     width: 100%; padding: 150px 0; position: relative;
 
-    &::before {content:''; display: block; width: 52%; height: 90%; background: #f2efeb; position: absolute; top: 0px; left: 48%; z-index: -2;}
+    &::before {content:''; display: block; width: 52%; height: 90%; background: #f2efeb; position: absolute; top: 0px; left: 48%; z-index: -2; 
+    transform: translateX(-200px); transition: 1s; opacity: 0;}
+    &.on {
+        &::before {
+            opacity:1; transform: translateX(0px);
+        }
+    }
 
     .inner {
         width: 1180px; margin: 0 auto; position: relative;

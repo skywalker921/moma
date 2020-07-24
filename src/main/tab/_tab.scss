@@ -1,152 +1,152 @@
+$imgs : (1:"con9_1.jpg", 2:"con9_2.jpg", 3:"con9_3.jpg" );
+
 #tab {
-    width: 100%; padding: 150px 0 200px 0; position: relative; 
+    width:100%; padding:150px 0px; box-sizing:border-box; overflow:hidden;
 
-    &::before {content:''; display: block; width: 38%; height: 10%; background: #9fadb6; position: absolute; top: 15%; left: 0%; z-index: -2;}
+    .inner {
+        width:1180px; margin:0px auto;
 
-    .inner{
-        width: 1180px; margin: 0 auto;
-
-        h1 { font: 500 34px/1 'Barlow', sans-serif; color: #333; text-align: left;}
-        span {display: block; font: 16px/1 'Barlow', sans-serif; color: #eee; text-align: left; margin-top: 5px; margin-bottom: 50px;}
-
-        .wrap{
-            width: 100%; position: relative; height: 100%;
-
-            
-            >img.tab_logo {
-                position: absolute; width: 120px; z-index: 1; top: 7%; left: 10%; transform: translateX(-50%);
-            }
-
-            ul.tab_btns {
-                width: 20%; position: absolute; height: 100%; background: #f2efeb; top: 0; left: 0; box-sizing: border-box; padding-top: 150px;
-
-                li {
-                    width: 100%; height: 50px; box-sizing: border-box; 
-
-                    >a {
-                        width: 100%; height: 50px; display: block; font: bold 15px/50px 'Barlow', sans-serif; color: #777; text-indent: 50px;
-
-                        &.on {
-                            color: #084669;
-                        }
-                    }
-                }
-            }
-
-            >div {
-                width: 80%; height: 365px; box-sizing: border-box; margin-left: 20%; padding: 100px; position: relative; display: none; border: 1px solid #bbb;
-
-                h2 {
-                    font: 5vw/1 'Barlow', sans-serif; color: #aaa; transform:translateX(-200px); opacity:0; transition:0.5s; position:relative; z-index:2;
-                }
-
-                a{
-                    display: block; font: 13px/1 'Roboto', sans-serif; color: #777; margin-top: 30px; opacity: 0; transform: translateX(-180px); transition:0.5s 0.4s;  z-index: 1; 
-                }
-
-                >img{
-                    width: 40%; 
-                    position: absolute; right: 30px; bottom: 0; z-index: 1; transform:translateX(200px); opacity:0; transition:0.5s 0.2s;
-                }
-
-                &.on {
-                    display: block;
-
-                    a {transform: translateX(0px); opacity: 1;}
-                    h2 {transform:translateX(0px); opacity:1;}
-                    img {transform:translateX(0px); opacity:1;}
-                }
-            }
+        h1 {
+            font:bold 24px/1 'roboto'; color:#555; margin-bottom:50px;
         }
-    }
-}
 
+        .wrap {
+            .left {
+                width:30%; float:left;                
 
-// tablet
-@media screen and (max-width:$tablet) {
- 
-    #tab {
-    
-        &::before {content:''; display: block; width: 32%; height: 10%; background: #9fadb6; position: absolute; top:20%; left: 0%; z-index: -2;}
-    
-        .inner{
-            width: 90%; 
-    
-            h1 {font-size: 28px;}
-            span {font-size: 14px;}
-    
-            .wrap{
-                img.tab_logo { width: 100px; 
-                }
-    
-                ul.tab_btns { padding-top: 110px;
-    
-                    li {    
-                        >a { text-indent: 20px;
-    
-                        }
-                    }
-                }
-    
-                >div {padding: 70px; height: auto;
-    
-                    
-                }
-            }
-        }
-    }
-}
+                ul {
+                    width:100%; overflow:hidden;
 
-//mobile
-
-@media screen and (max-width:$mobile) {
-   
-    #tab {
-        padding:80px 0;
-    
-        &::before {content:''; display: block; width: 38%; height: 10%; background: #9fadb6; position: absolute; top: 13%; left: 0%; z-index: -2;}
-    
-        .inner{
-    
-            h1 {  font-size: 24px;}
-           
-    
-            .wrap{
-                width: 100%; position: relative; height: 100%;
-
-                >img.tab_logo {
-                   display: none;
-                }
-    
-                ul.tab_btns {
-                    width: 100%; height: 40px; padding-top: 0px;  z-index: 3;
-    
                     li {
-                        width: calc(100% / 3); height: 100%; float: left;
-    
-                        >a {
-                            width: 100%; height: 40px; display: block; font: bold 13px/40px 'Barlow', sans-serif; text-indent: 0px; text-align: center;
-    
+                        width:100%; margin-bottom:5px; transition:0.5s;
+                        opacity:0.5; 
+
+                        &.on {opacity:1;}
+
+                        a {
+                            display:flex; align-items:flex-start; justify-content:space-between;
+
+                            span {
+                                display:flex; align-items:center;
+                                font:bold 16px/1 'orbitron'; color:#777;
+                                width:calc(100% - 90px);
+
+                                i {
+                                    margin-right:20px; font-size:30px;
+                                    color:#222;
+                                }
+                            }  
+
+                            .pic {
+                                width:80px; height:80px; background:#444; background-size:cover; background-repeat:no-repeat; background-position:center;
+                            }
+                        }
+
+                        @each $key, $img in $imgs {
+                            &:nth-of-type(#{$key}) a .pic {background-image:url('../img/#{$img}');}
                         }
                     }
                 }
-    
-                >div {
-                    width: 100%; margin-left: 0; padding: 120px 50px 50px 50px;
-    
-                    h2 {
-                        font-size: 40px;
-                    }
-    
+            }
+
+            .right {
+                width:calc(70% - 5px); float:right; display:flex; justify-content:space-between; position:relative; flex-wrap:wrap;
+
+                .photo {
+                    width:45%; height:400px; position:relative;
+
+                    >ul>li {
+                        width:100%; height:100%; position:absolute; top:0px; left:0px; display:flex; align-items:center;  justify-content:center; background:#555; transition:0.5s; opacity:0; transform:translate(60px, 60px); background-size:cover; background-position:center; background-repeat:no-repeat; color: transparent;
+
+                        @each $key, $img in $imgs {
+                            &:nth-of-type(#{$key}) {background-image:url('../img/#{$img}');}
+                        }
 
 
-                    >img{
-                        width: auto; height: 80%;
+                        &::after {
+                            content:''; display:block; width:120px; height:80px; background:#fff; position:absolute; bottom:0px; right:0px;
+                        }
+
+                        &.on {opacity:1; transform:translate(0px, 0px);}
                     }
-    
-    
+                }
+
+                .txt {
+                    width:calc(55% - 40px); position:relative;
+
+                    >ul>li {
+                        width:100%; position:absolute; top:0px; left:0px; opacity:0; transition:0.5s 0.2s; transform:translateY(20px); 
+
+                        &.on {opacity:1; transform:translateY(0px);}
+
+                        h2 {
+                            font:normal 44px/1.1 'Barlow'; color:#111; margin-bottom:30px;
+                        }
+                        p {
+                            font:16px/1.4 'Roboto'; color:#777;
+                        }
+
+                        
+                    }
                 }
             }
+        }        
+    }
+}
+
+
+/* tablet */
+@media screen and (max-width:$tablet){
+    #tab {
+        padding:100px 0px; 
+    
+        .inner {
+            width:90%;  
+
+            .wrap {
+                .left {
+                    width:100%; margin-bottom:30px;
+                    ul li a {
+                        span {width:45%;}
+                        .pic {width:50%; height:80px;}
+                    }
+                }
+                .right {
+                    width:100%;
+                }
+            }
+        }
+    }
+}
+
+/* mobile */
+@media screen and (max-width:$mobile){
+    #tab {
+        padding:80px 0px; 
+    
+        .inner {
+            .wrap {
+                .left {
+                    width:100%; margin-bottom:40px; 
+                    ul li a {
+                        span {width:70%;}
+                        .pic {width:27%; height:50px;}
+                    }
+                }
+    
+                .right {
+                    width:100%;
+
+                    .photo {
+                        width:100%; margin-bottom:20px;
+                    }
+                    .txt {
+                        width:100%;
+
+                        ul {min-height:300px;}
+                    };
+                }
+            }            
         }
     }
 }

@@ -1,21 +1,22 @@
 $(document).ready(function(){
-  
+    let $tab = $('#tab');
+    let $btn = $tab.find('.left li');
+    let $photo = $tab.find('.photo li');
+    let $txt = $tab.find('.txt li');
 
-    $('#tab .tab_btns>li').on('click', function(e){
+    $btn.on('click',function(e){
         e.preventDefault();
 
         let i = $(this).index();
 
-        $('#tab .tab_btns>li>a').removeClass('on');
-        $('#tab .tab_btns>li').eq(i).children('a').addClass('on')
+        $btn.removeClass('on');
+        $photo.removeClass('on');
+        $txt.removeClass('on');
 
-        $('#tab .wrap>div').hide().removeClass('on');
-        $('#tab .wrap>div').eq(i).show();
-
-        setTimeout(function(){
-            $('#tab .wrap>div').eq(i).addClass('on');
-        }, 100);
-
+        $btn.eq(i).addClass('on');
+        $photo.eq(i).addClass('on');
+        $txt.eq(i).addClass('on');
     });
 
-});
+
+})

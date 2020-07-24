@@ -69,8 +69,8 @@ $(document).ready(function(){
             }
         })
         .success(function(data){
-
-           create_dom(data);
+            console.log(data);
+            create_dom(data);           
 
         })
         .error(function(){

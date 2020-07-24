@@ -5,7 +5,7 @@
         width: 1180px; margin: 0 auto; 
 
         h1 {
-            font: 500 34px/1 'Barlow', sans-serif; color:#2d4553;; position: relative; padding-bottom: 5px; transition: all 0.5s;
+            font: 500 34px/1 'Barlow', sans-serif; color:#2d4553; position: relative; padding-bottom: 5px; transition: all 0.5s;
 
             &::before {content:''; display: block; width: 290px; height: 2.5px; background: #ccc; position: absolute; left: 0; bottom: 0;} 
         }
@@ -61,10 +61,10 @@
                 }
             }
 
-            .prev {
+            .col_prev {
                 position: absolute; color: #777; right: 4%; top: 3%; font-size: 16px;
             }
-            .next {
+            .col_next {
                 position: absolute; color: #777; right: 1%; top: 3%; font-size: 16px;
             }
 
@@ -107,10 +107,10 @@
                         }
                     }
                 }
-                .prev {
+                .col_prev {
                     right: 6%; font-size: 20px;
                 }
-                .next {
+                .col_next {
                     right: 3%; font-size: 20px;
                 }
             }
@@ -148,10 +148,10 @@
                     }
                 }
 
-                .prev {
+                .col_prev {
                     left:0; top: 50%; font-size: 25px; transform: translateY(-50%);
                 }
-                .next {
+                .col_next {
                     right: 0%; top: 50%; font-size: 25px; transform: translateY(-50%);
                 }
             }
